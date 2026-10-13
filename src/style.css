@@ -1,0 +1,123 @@
+:host {display:block; min-width:0;}
+  #ha-krisenradar-preview { padding:0; color-scheme:dark; }
+  #ha-krisenradar-preview .kr-shell { --kr-bg:#0c131a; --kr-surface:#111d26; --kr-line:#25323e; --kr-text:#ecf3f7; --kr-muted:#a5b5c0; --kr-teal:#77ddce; --kr-amber:#ffc17b; --kr-map:#0b151d; box-sizing:border-box; margin:0 auto; width:100%; max-width:736px; background:var(--kr-bg); color:var(--kr-text); font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; border:1px solid var(--kr-line); border-radius:20px; overflow:hidden; }
+  #ha-krisenradar-preview .kr-shell * {box-sizing:border-box;}
+  #ha-krisenradar-preview h2,#ha-krisenradar-preview h3,#ha-krisenradar-preview p {margin:0;}
+  #ha-krisenradar-preview .kr-header {display:flex;justify-content:space-between;align-items:center;padding:23px 24px 12px;gap:12px;}
+  #ha-krisenradar-preview .kr-brand {display:flex;align-items:center;gap:13px;}
+  #ha-krisenradar-preview .kr-brand-symbol {display:grid;place-items:center;width:42px;height:42px;color:var(--kr-teal);background:#162b2e;border-radius:12px;}
+  #ha-krisenradar-preview .kr-brand-symbol ha-icon {width:25px;height:25px;}
+  #ha-krisenradar-preview .kr-eyebrow {font-size:11px;letter-spacing:1.7px;line-height:1.5;color:var(--kr-muted);font-weight:500;}
+  #ha-krisenradar-preview h2 {font-size:25px;line-height:1.15;letter-spacing:-.6px;font-weight:500;}
+  #ha-krisenradar-preview .kr-preview-tag {font-size:12px;line-height:1.5;background:#2b251b;color:#e7c892;padding:5px 10px;border:1px solid #51432c;border-radius:7px;}
+  #ha-krisenradar-preview .kr-intro {display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 24px 20px;flex-wrap:wrap;}
+  #ha-krisenradar-preview .kr-intro p {font-size:13px;color:var(--kr-muted);line-height:1.5;}
+  #ha-krisenradar-preview .kr-clock {display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-clock ha-icon {width:14px;height:14px;}
+  #ha-krisenradar-preview .kr-clock strong {font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:15px;font-weight:500;color:var(--kr-text);font-variant-numeric:tabular-nums;}
+  #ha-krisenradar-preview .kr-clock-year {font-size:11px;color:var(--kr-muted);}
+  #ha-krisenradar-preview button {font-family:inherit;color:var(--kr-text);font-size:13px;line-height:1.4;font-weight:400;}
+  #ha-krisenradar-preview .kr-layer-switch {display:flex;margin:0 24px 18px;padding:4px;gap:4px;background:#151f29;border:1px solid var(--kr-line);border-radius:10px;}
+  #ha-krisenradar-preview .kr-layer-switch button {display:flex;align-items:center;justify-content:center;gap:7px;flex:1;min-width:0;padding:10px 8px;background:transparent;border:0;border-radius:6px;white-space:nowrap;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-layer-switch button[aria-pressed="true"] {background:#293843;color:var(--kr-text);font-weight:500;}
+  #ha-krisenradar-preview .kr-layer-switch button[data-layer="radiation"] ha-icon {color:var(--kr-teal);}
+  #ha-krisenradar-preview .kr-layer-switch button[data-layer="outbreak"] ha-icon {color:var(--kr-amber);}
+  #ha-krisenradar-preview .kr-layer-switch button ha-icon {width:16px;height:16px;flex-shrink:0;}
+  #ha-krisenradar-preview .kr-map-toolbar {display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 24px 12px;flex-wrap:wrap;}
+  #ha-krisenradar-preview .kr-regions {display:flex;gap:2px;}
+  #ha-krisenradar-preview .kr-regions button {padding:8px 10px;border:0;border-radius:6px;background:transparent;color:var(--kr-muted);font-size:12px;}
+  #ha-krisenradar-preview .kr-regions button[aria-pressed="true"] {background:#1d3035;color:var(--kr-teal);}
+  #ha-krisenradar-preview .kr-data-label {font-size:11px;letter-spacing:1.2px;color:#d9b17a;line-height:1.5;}
+  #ha-krisenradar-preview .kr-map {height:356px;position:relative;background:var(--kr-map);overflow:hidden;border-top:1px solid #1d2a34;border-bottom:1px solid #1d2a34;touch-action:pan-y;}
+  #ha-krisenradar-preview .kr-geography {width:100%;height:100%;display:block;}
+  #ha-krisenradar-preview .kr-graticule path {fill:none;stroke:#23343d;stroke-width:.65;}
+  #ha-krisenradar-preview .kr-countries path {fill:#1b2c35;stroke:#40515a;stroke-width:.65;stroke-linejoin:round;}
+  #ha-krisenradar-preview .kr-countries path.kr-country-outbreak {fill:#59432f;stroke:#897355;}
+  #ha-krisenradar-preview .kr-countries path.kr-country-home {fill:#243f43;stroke:#7ca99e;}
+  #ha-krisenradar-preview .kr-countries path.kr-country-selected {fill:#38585a;stroke:var(--kr-teal);stroke-width:1.1;}
+  #ha-krisenradar-preview .kr-map-caption,#ha-krisenradar-preview .kr-map-hint {position:absolute;bottom:12px;pointer-events:none;font-size:11px;letter-spacing:1.4px;color:#a6bcc5;background:#0b151de8;padding:5px 8px;border-radius:4px;}
+  #ha-krisenradar-preview .kr-map-caption {left:16px;}
+  #ha-krisenradar-preview .kr-map-hint {right:16px;letter-spacing:0;}
+  #ha-krisenradar-preview .kr-points,#ha-krisenradar-preview .kr-places {position:absolute;inset:0;pointer-events:none;}
+  #ha-krisenradar-preview .kr-point {position:absolute;display:grid;place-items:center;transform:translate(-50%,-50%);width:34px;height:34px;background:transparent;border:0;padding:0;pointer-events:auto;border-radius:50%;}
+  #ha-krisenradar-preview .kr-point .kr-mark {display:grid;place-items:center;width:12px;height:12px;background:var(--kr-teal);border:2px solid #0b151d;border-radius:50%;box-shadow:0 0 0 4px #77ddce19;}
+  #ha-krisenradar-preview .kr-point[data-kind="outbreak"] .kr-mark {background:var(--kr-amber);border-radius:2px;transform:rotate(45deg);box-shadow:0 0 0 4px #ffc17b17;}
+  #ha-krisenradar-preview .kr-point.kr-cluster .kr-mark {width:26px;height:26px;border:1px solid #79ddcfa8;background:#193d3b;font-size:11px;font-weight:500;color:#b4fff1;}
+  #ha-krisenradar-preview .kr-point.kr-cluster[data-kind="outbreak"] .kr-mark {transform:none;background:#513b26;color:#ffe4c4;border-color:#eeb774bd;}
+  #ha-krisenradar-preview .kr-point.kr-cluster[data-kind="mixed"] .kr-mark {border-color:#c9c29b;background:#283d3c;color:#f2e5bf;}
+  #ha-krisenradar-preview .kr-point[aria-pressed="true"] .kr-mark {box-shadow:0 0 0 5px #77ddce2b,0 0 0 6px #77ddce70;}
+  #ha-krisenradar-preview .kr-point[data-kind="outbreak"][aria-pressed="true"] .kr-mark {box-shadow:0 0 0 5px #ffc17b2b,0 0 0 6px #ffc17b70;}
+  #ha-krisenradar-preview .kr-home {position:absolute;transform:translate(-50%,-50%);width:13px;height:13px;border:1px solid #b9d8df;background:#0b151d;pointer-events:none;}
+  #ha-krisenradar-preview .kr-home:before,#ha-krisenradar-preview .kr-home:after {content:"";position:absolute;background:#b9d8df;}
+  #ha-krisenradar-preview .kr-home:before {height:1px;width:21px;top:5px;left:-5px;}
+  #ha-krisenradar-preview .kr-home:after {width:1px;height:21px;left:5px;top:-5px;}
+  #ha-krisenradar-preview .kr-home-label {position:absolute;white-space:nowrap;background:#0b151dea;padding:3px 6px;border-radius:3px;font-size:11px;color:#d5e5e8;pointer-events:none;}
+  #ha-krisenradar-preview .kr-map-legend {display:flex;flex-wrap:wrap;align-items:center;gap:17px;padding:13px 24px;color:var(--kr-muted);font-size:12px;line-height:1.5;}
+  #ha-krisenradar-preview .kr-map-legend>span {display:flex;align-items:center;gap:7px;}
+  #ha-krisenradar-preview .kr-map-legend b {font-weight:500;color:var(--kr-text);font-variant-numeric:tabular-nums;}
+  #ha-krisenradar-preview .kr-key {display:inline-block;width:8px;height:8px;background:var(--kr-teal);border-radius:50%;}
+  #ha-krisenradar-preview .kr-key-outbreak {background:var(--kr-amber);border-radius:1px;transform:rotate(45deg);}
+  #ha-krisenradar-preview .kr-key-home {background:transparent;border:1px solid #b9d8df;border-radius:0;}
+  #ha-krisenradar-preview .kr-detail {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 20px;margin:2px 24px 20px;padding:17px 18px;background:#14222c;border:1px solid #2c404a;border-radius:11px;}
+  #ha-krisenradar-preview .kr-detail h3 {font-size:19px;font-weight:500;letter-spacing:-.3px;line-height:1.4;overflow-wrap:anywhere;}
+  #ha-krisenradar-preview .kr-detail-region {font-size:12px;color:var(--kr-muted);line-height:1.6;}
+  #ha-krisenradar-preview .kr-detail-number {display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:3px;}
+  #ha-krisenradar-preview .kr-detail-value {font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:30px;font-weight:500;letter-spacing:-1px;color:var(--kr-teal);font-variant-numeric:tabular-nums;line-height:1.1;}
+  #ha-krisenradar-preview .kr-detail-unit {font-size:12px;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-detail.kr-detail-outbreak .kr-detail-value {color:var(--kr-amber);}
+  #ha-krisenradar-preview .kr-detail-facts {grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;line-height:1.5;color:#c6d4dc;}
+  #ha-krisenradar-preview .kr-detail-age {color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-detail-source {grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #2a3d48;padding-top:10px;flex-wrap:wrap;font-size:11px;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-source-link {display:flex;align-items:center;gap:4px;font-size:12px;line-height:1.5;color:#c5e7e4;text-decoration:none;}
+  #ha-krisenradar-preview .kr-source-link ha-icon {width:13px;height:13px;}
+  #ha-krisenradar-preview .kr-report-section {padding:0 24px 10px;}
+  #ha-krisenradar-preview .kr-report-heading {display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:5px;}
+  #ha-krisenradar-preview .kr-report-heading h3 {font-size:13px;font-weight:500;line-height:1.5;color:#dce7ed;}
+  #ha-krisenradar-preview .kr-list-count {font-size:11px;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-report-list {display:flex;flex-direction:column;}
+  #ha-krisenradar-preview .kr-report-row {width:100%;display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:10px;background:transparent;border:0;border-bottom:1px solid #202e38;text-align:left;padding:12px 0;}
+  #ha-krisenradar-preview .kr-row-indicator {display:grid;place-items:center;color:var(--kr-teal);}
+  #ha-krisenradar-preview .kr-row-indicator ha-icon {width:17px;height:17px;}
+  #ha-krisenradar-preview .kr-report-row[data-kind="outbreak"] .kr-row-indicator {color:var(--kr-amber);}
+  #ha-krisenradar-preview .kr-report-row strong {font-size:13px;font-weight:500;display:block;line-height:1.5;color:#e4eef4;}
+  #ha-krisenradar-preview .kr-report-row small {font-size:11px;display:block;line-height:1.5;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-row-value {font-size:13px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;}
+  #ha-krisenradar-preview .kr-row-value small {font-family:Inter,system-ui,sans-serif;font-size:11px;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-report-row[aria-pressed="true"] strong {color:var(--kr-teal);}
+  #ha-krisenradar-preview .kr-report-row[data-kind="outbreak"][aria-pressed="true"] strong {color:var(--kr-amber);}
+  #ha-krisenradar-preview .kr-more {width:100%;margin-top:10px;padding:9px;background:#14212b;border:1px solid var(--kr-line);border-radius:6px;color:var(--kr-muted);font-size:12px;}
+  #ha-krisenradar-preview .kr-more[hidden] {display:none;}
+  #ha-krisenradar-preview .kr-empty {padding:14px 0;font-size:12px;color:var(--kr-muted);}
+  #ha-krisenradar-preview .kr-footer {display:flex;align-items:center;justify-content:center;gap:7px;padding:16px 20px 18px;font-size:11px;color:var(--kr-muted);line-height:1.5;text-align:center;}
+  #ha-krisenradar-preview .kr-footer-dot {width:5px;height:5px;border-radius:50%;background:#d9b17a;flex-shrink:0;}
+  #ha-krisenradar-preview button:hover {filter:brightness(1.13);}
+  #ha-krisenradar-preview .kr-point:hover .kr-mark {box-shadow:0 0 0 5px #77ddce35;}
+  #ha-krisenradar-preview .kr-point[data-kind="outbreak"]:hover .kr-mark {box-shadow:0 0 0 5px #ffc17b35;}
+  #ha-krisenradar-preview button,#ha-krisenradar-preview a {cursor:pointer;}
+  #ha-krisenradar-preview .kr-detail[hidden] {display:none;}
+  @media(max-width:480px){
+    #ha-krisenradar-preview .kr-header {padding:20px 16px 11px;}
+    #ha-krisenradar-preview .kr-intro {padding:0 16px 16px;gap:8px;}
+    #ha-krisenradar-preview .kr-intro p {width:100%;}
+    #ha-krisenradar-preview .kr-layer-switch {margin:0 16px 13px;}
+    #ha-krisenradar-preview .kr-layer-switch button {padding:10px 4px;font-size:12px;gap:5px;}
+    #ha-krisenradar-preview .kr-layer-switch button ha-icon {width:14px;height:14px;}
+    #ha-krisenradar-preview .kr-map-toolbar {padding:0 16px 10px;}
+    #ha-krisenradar-preview .kr-data-label {width:100%;font-size:11px;letter-spacing:.9px;padding-top:2px;}
+    #ha-krisenradar-preview .kr-map {height:278px;}
+    #ha-krisenradar-preview .kr-map-legend {padding:12px 16px;gap:10px 16px;font-size:11px;}
+    #ha-krisenradar-preview .kr-detail {margin:2px 16px 18px;padding:14px 13px;gap:10px;}
+    #ha-krisenradar-preview .kr-detail h3 {font-size:18px;}
+    #ha-krisenradar-preview .kr-detail-value {font-size:26px;}
+    #ha-krisenradar-preview .kr-report-section {padding:0 16px 7px;}
+    #ha-krisenradar-preview .kr-footer {padding:14px 16px 16px;}
+    #ha-krisenradar-preview .kr-eyebrow {letter-spacing:1.1px;}
+  }
+  @media(pointer:coarse){
+    #ha-krisenradar-preview .kr-layer-switch button,#ha-krisenradar-preview .kr-regions button,#ha-krisenradar-preview .kr-more {min-height:44px;}
+    #ha-krisenradar-preview .kr-point {width:44px;height:44px;}
+    #ha-krisenradar-preview .kr-source-link {min-height:44px;}
+  }
+
+.kr-clock[hidden]{display:none!important;}
+ha-icon {--mdc-icon-size:16px; flex-shrink:0;}

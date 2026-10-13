@@ -1,0 +1,7 @@
+type: custom:krisenradar-card
+title: Krisenradar
+region: balkan
+layer: all
+max_items: 3
+show_clock: true
+demo: true

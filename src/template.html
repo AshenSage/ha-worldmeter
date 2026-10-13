@@ -1,0 +1,64 @@
+<div id="ha-krisenradar-preview">
+  <section class="kr-shell" aria-label="Home Assistant Krisenradar Demo">
+    <header class="kr-header">
+      <div class="kr-brand">
+        <span class="kr-brand-symbol"><ha-icon icon="mdi:radar" aria-hidden="true"></ha-icon></span>
+        <div><span class="kr-eyebrow">GLOBALE LAGE</span><h2>Krisenradar</h2></div>
+      </div>
+      <span class="kr-preview-tag">Demo</span>
+    </header>
+    <div class="kr-intro">
+      <p>Strahlung &amp; Krankheitsausbrüche</p>
+      <span class="kr-clock"><ha-icon icon="mdi:clock-outline" aria-hidden="true"></ha-icon><strong>85 s</strong><span>vor Mitternacht</span><span class="kr-clock-year">2026 · symbolisch</span></span>
+    </div>
+    <div class="kr-layer-switch" role="group" aria-label="Kartenebenen">
+      <button type="button" data-layer="all" aria-pressed="true">Beide Ebenen</button>
+      <button type="button" data-layer="radiation" aria-pressed="false"><ha-icon icon="mdi:radioactive" aria-hidden="true"></ha-icon>Strahlung</button>
+      <button type="button" data-layer="outbreak" aria-pressed="false"><ha-icon icon="mdi:biohazard" aria-hidden="true"></ha-icon>Ausbrüche</button>
+    </div>
+    <div class="kr-map-toolbar">
+      <div class="kr-regions" role="group" aria-label="Kartenausschnitt">
+        <button type="button" data-region="world" aria-pressed="true">Welt</button>
+        <button type="button" data-region="europe" aria-pressed="false">Europa</button>
+        <button type="button" data-region="balkan" aria-pressed="false">Balkan</button>
+        <button type="button" data-region="swiss" aria-pressed="false">Schweiz</button>
+      </div>
+      <span class="kr-data-label">BEISPIELDATEN</span>
+    </div>
+    <div class="kr-map">
+      <svg class="kr-geography" role="img" aria-label="2D Weltkarte mit geografischen Ländergrenzen und auswählbaren Beispielmesspunkten">
+        <title>Krisenradar: Strahlungsmesspunkte und Krankheitsausbrüche – Beispieldaten</title>
+        <defs>
+          <pattern id="kr-map-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#192932" stroke-width="0.6"/></pattern>
+        </defs>
+        <rect class="kr-grid" width="100%" height="100%" fill="url(#kr-map-grid)"/>
+        <g class="kr-graticule"></g><g class="kr-countries"></g>
+      </svg>
+      <div class="kr-points"></div>
+      <div class="kr-places"></div>
+      <span class="kr-map-caption">WELT / 2D</span>
+      <span class="kr-map-hint">Punkt antippen</span>
+    </div>
+    <div class="kr-map-legend">
+      <span><span class="kr-key kr-key-radiation"></span>Strahlung <b class="kr-rad-count">–</b></span>
+      <span><span class="kr-key kr-key-outbreak"></span>Ausbrüche <b class="kr-out-count">–</b></span>
+      <span class="kr-legend-location"><span class="kr-key kr-key-home"></span>Deine Orte</span>
+    </div>
+    <section class="kr-detail" aria-live="polite" aria-atomic="true">
+      <div class="kr-detail-main">
+        <span class="kr-detail-type kr-eyebrow">MESSPUNKT · BEISPIEL</span>
+        <h3 class="kr-detail-name">Belgrad</h3>
+        <p class="kr-detail-region">Serbien · Beispielstation</p>
+      </div>
+      <div class="kr-detail-number"><strong class="kr-detail-value">0,12</strong><span class="kr-detail-unit">µSv/h</span></div>
+      <div class="kr-detail-facts"><span class="kr-detail-reference">Referenzwert: 0,11 µSv/h</span><span class="kr-detail-age">Demowert · kein Live-Messwert</span></div>
+      <div class="kr-detail-source"><span class="kr-detail-source-label">Datenquelle vorgesehen: EURDEP</span><a class="kr-source-link" href="https://remap.jrc.ec.europa.eu/" target="_blank" rel="noopener noreferrer">Datenquelle<ha-icon icon="mdi:arrow-top-right" aria-hidden="true"></ha-icon></a></div>
+    </section>
+    <section class="kr-report-section" aria-label="Auswählbare Beispielmeldungen">
+      <div class="kr-report-heading"><h3 class="kr-list-title">Im Kartenausschnitt</h3><span class="kr-list-count"></span></div>
+      <div class="kr-report-list"></div>
+      <button type="button" class="kr-more" hidden>Weitere Beispiele anzeigen</button>
+    </section>
+    <footer class="kr-footer"><span class="kr-footer-dot"></span>Karte: Beispieldaten · keine Live-Anbindung</footer>
+  </section>
+</div>

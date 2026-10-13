@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const project=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=(name)=>fs.readFileSync(path.join(project,name),'utf8');
+const geometry=JSON.parse(read('vendor/world-countries.geojson'));
+const notices=read('THIRD_PARTY_NOTICES.md').replaceAll('*/','* /');
+const source=`/* Krisenradar Card v1.0.0 – MIT.\n${notices}\n*/\n(()=>{\n'use strict';\nfunction loadD3(){const globalThis={};const self=globalThis;const module=undefined,exports=undefined,define=undefined;\n${read('vendor/d3-7.9.0.min.js')}\nreturn globalThis.d3;}\nconst d3=loadD3();\nconst WORLD=${JSON.stringify(geometry)};\nconst HTML=${JSON.stringify(read('src/template.html'))};\nconst CSS=${JSON.stringify(read('src/style.css'))};\n${read('src/renderer.js')}\n${read('src/card.js')}\n})();\n`;
+fs.writeFileSync(path.join(project,'krisenradar-card.js'),source);
+const preview=`<!doctype html>\n<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Krisenradar – Demo</title><style>body{margin:0;padding:20px;background:#f0f3f4;font-family:system-ui,sans-serif;}krisenradar-card{max-width:736px;margin:auto;}ha-icon{display:inline-grid;place-items:center;width:16px;height:16px;font-size:16px;}@media(max-width:480px){body{padding:8px}}</style></head><body><krisenradar-card></krisenradar-card><script>customElements.define('ha-icon',class extends HTMLElement{connectedCallback(){const symbols={'mdi:radar':'◎','mdi:clock-outline':'◷','mdi:radioactive':'☢','mdi:biohazard':'☣','mdi:arrow-top-right':'↗'};this.textContent=symbols[this.getAttribute('icon')]||'';}});${source.replace(/<\/script/gi,'<\\/script')}</script></body></html>\n`;
+fs.writeFileSync(path.join(project,'preview.html'),preview);
+console.log(JSON.stringify({cardBytes:source.length,countries:geometry.length}));
